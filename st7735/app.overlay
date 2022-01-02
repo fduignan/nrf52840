@@ -1,0 +1,19 @@
+&uart0 {
+	compatible = "nordic,nrf-uarte";
+	status = "okay";	
+    /delete-property/ rts-pin;
+    /delete-property/ cts-pin;
+};
+
+&spi1 {
+ compatible = "nordic,nrf-spim";
+ 
+ status = "okay";
+ sck-pin = <29>;
+ mosi-pin = <2>;
+ // redirect MISO to a pin not available on the dongle 
+ miso-pin = <5>;
+ // pull un-connected pin down
+ miso-pull-down;
+ clock-frequency = <8000000>; // This seem to have no effect
+};

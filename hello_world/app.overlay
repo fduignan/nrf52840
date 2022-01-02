@@ -1,0 +1,7 @@
+&uart0 {
+	compatible = "nordic,nrf-uarte";
+	status = "okay";	
+    /delete-property/ rts-pin;
+    /delete-property/ cts-pin;
+};
+
